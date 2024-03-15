@@ -1,5 +1,27 @@
 <html>
-  <body>
-    Hello World!
-  </body>
+    <head>
+
+        <!--getting 404 error-->
+        <script src="https://formscom2-dev-ed.develop.my.site.com/lightningoutauraws/lightning/lightning.out.js"></script>
+    </head>
+    <body>
+        <div id="exformlocation"></div>
+    </body>
+    <script>
+        $Lightning.use("c:ExternalForms",    // replace name of lightning app for current scenario
+            function() {                  // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    "c:lightouttest",        // top-level component of your app
+                    { },                // attributes to set on the component when created
+                    "exformlocation",   // the DOM location to insert the component
+                    function(cmp) {
+                        // callback when component is created and active on the page
+                        console.log("*** created");
+                    }
+                );
+            },
+            // Experience Cloud site endpoint
+            'https://formscom2-dev-ed.develop.my.site.com/lightningoutauraws/',
+        );
+  </script>
 </html>
